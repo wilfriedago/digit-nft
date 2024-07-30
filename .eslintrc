@@ -1,3 +1,123 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  // Configuration for JavaScript files
+  "extends": [
+    "airbnb-base",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "plugin:@next/next/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  },
+  "overrides": [
+    // Configuration for TypeScript files
+    {
+      "files": ["*.ts", "*.tsx"],
+      "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+      },
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": { "jsx": true },
+        "project": "./tsconfig.json",
+        "sourceType": "module"
+      },
+      "settings": {
+        "react": { "version": "detect" },
+        "tailwindcss": {
+          "classRegex": "^class(Name)?$|^tw$", // can be modified to support custom attributes. E.g. "^tw$" for `twin.macro`
+          "removeDuplicates": true
+        }
+      },
+      "extends": [
+        "airbnb",
+        "airbnb/hooks",
+        "airbnb-typescript",
+        "next/core-web-vitals",
+        "plugin:prettier/recommended",
+        "plugin:@next/next/recommended",
+        "plugin:tailwindcss/recommended",
+        "plugin:sonarjs/recommended-legacy",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+        "plugin:@typescript-eslint/recommended-type-checked"
+      ],
+      "plugins": [
+        "@typescript-eslint",
+        "unused-imports",
+        "tailwindcss",
+        "sonarjs",
+        "no-secrets",
+        "react",
+        "import",
+        "react-hooks",
+        "simple-import-sort"
+      ],
+      "rules": {
+        "@next/next/no-img-element": "off",
+        "@typescript-eslint/comma-dangle": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/interface-name-prefix": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "import/extensions": "off",
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": [
+              "unlighthouse.config.ts",
+              "tailwind.config.ts",
+              "velite.config.ts"
+            ]
+          }
+        ],
+        "import/prefer-default-export": "off",
+        "no-param-reassign": "warn",
+        "no-restricted-syntax": [
+          "error",
+          "ForInStatement",
+          "LabeledStatement",
+          "WithStatement"
+        ],
+        "no-secrets/no-secrets": "error",
+        "no-underscore-dangle": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "react/destructuring-assignment": "off",
+        "react/function-component-definition": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/require-default-props": "off",
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": "error",
+        "tailwindcss/no-contradicting-classname": "error",
+        "tailwindcss/no-unnecessary-arbitrary-value": "error",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "error",
+          {
+            "vars": "all",
+            "varsIgnorePattern": "^_",
+            "args": "after-used",
+            "argsIgnorePattern": "^_"
+          }
+        ]
+      }
+    }
+  ]
 }

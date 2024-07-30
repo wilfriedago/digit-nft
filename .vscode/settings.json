@@ -1,0 +1,69 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": false,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "editor.wordBasedSuggestions": "off",
+  // ESLint errors in yellow warning
+  "eslint.rules.customizations": [
+    {
+      "rule": "*",
+      "severity": "warn"
+    }
+  ],
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "github-actions-workflow" // for GitHub Actions workflow files
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "javascript.format.semicolons": "remove",
+  "npm.packageManager": "pnpm",
+  "search.exclude": {
+    "**/.next": true,
+    "**/node_modules": true,
+    "pnpm-lock.yaml": true
+  },
+  // Tailwind CSS Autocomplete, add more if used in projects
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    "tw\\.[^`]+`([^`]*)`",
+    "tw\\(.*?\\).*?`([^`]*)",
+    ["tw\\.[^`]+\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["tw\\(.*?\\).*?\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "testing.openTesting": "neverOpen", // Don't open the testing view automatically when running tests
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.format.semicolons": "remove",
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    // useRouter should be imported from `next/navigation` instead of `next/router`
+    "next/router.d.ts",
+    "next/dist/client/router.d.ts",
+    // give priority for Link to next/link instead of lucide-react
+    "lucide-react"
+  ],
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}

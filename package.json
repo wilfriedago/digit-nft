@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "build": "next build --no-lint",
+    "clean": "git clean -xdf .next",
+    "dev": "next dev --experimental-https",
+    "format": "prettier '**/*.{json,jsonc,yml,yaml,md,mdx}' --check",
+    "format:fix": "prettier '**/*.{json,jsonc,yml,yaml,md,mdx}' --write",
+    "lint": "next lint --strict --max-warnings 0 --report-unused-disable-directives-severity warn",
+    "lint:fix": "next lint --strict --max-warnings 0 --report-unused-disable-directives-severity warn --fix",
     "start": "next start",
-    "lint": "next lint"
+    "tsc": "tsc --noEmit --pretty",
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^18",
@@ -14,14 +20,34 @@
     "next": "14.2.5"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-no-secrets": "^1.0.2",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-sonarjs": "^1.0.4",
+    "eslint-plugin-tailwindcss": "^3.17.4",
+    "eslint-plugin-unused-imports": "^3.2.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   },
-  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
+  "engines": {
+    "node": ">=20"
+  }
 }

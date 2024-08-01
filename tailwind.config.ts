@@ -7,8 +7,7 @@ const config: Config = {
   plugins: [hocusPlugin],
   theme: {
     fontFamily: {
-      sans: ["var(--font-inter)", ...fontFamily.sans],
-      mono: ["var(--font-jetbrains-mono)", ...fontFamily.mono]
+      sans: ["var(--font-raleway)", ...fontFamily.sans]
     },
     fontSize: {
       xs: ["0.8125rem", { lineHeight: "1.5rem" }],
@@ -26,6 +25,33 @@ const config: Config = {
       "9xl": ["8rem", { lineHeight: "1" }]
     },
     extend: {
+      colors: {
+        neutral: {
+          50: "#E8E9EA",
+          100: "#B8BABE",
+          200: "#96989E",
+          300: "#666A72",
+          400: "#484D56",
+          500: "#1A202C",
+          600: "#181D28",
+          700: "#12171F",
+          800: "#0E1218",
+          900: "#0B0D12"
+        },
+        background: "#F8F8F8"
+      },
+      padding: {
+        "6.5": "1.625rem"
+      },
+      margin: {
+        "6.5": "1.625rem"
+      },
+      width: {
+        "7.5": "1.875rem"
+      },
+      height: {
+        "7.5": "1.875rem"
+      },
       aspectRatio: {
         auto: "auto",
         square: "1 / 1",

@@ -1,8 +1,10 @@
-import "../styles/globals.css"
+import "../styles/tailwind.css"
 
 import type { Metadata } from "next"
 
-import { inter } from "./fonts"
+import { cx } from "@/utils/cx"
+
+import { raleway } from "./fonts"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,7 +14,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cx(
+          "max-w-screen-2xl mx-auto antialiased bg-background scroll-smooth font-sans text-base text-neutral-700",
+          raleway.variable
+        )}>
+        {children}
+      </body>
     </html>
   )
 }

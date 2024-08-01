@@ -59,7 +59,13 @@
     "next/router.d.ts",
     "next/dist/client/router.d.ts",
     // give priority for Link to next/link instead of lucide-react
-    "lucide-react"
+    "lucide-react",
+    // give priority for custom Link from @/components/Link instead of next/link
+    "next/link.d.ts",
+    // give priority for custom Image from @/components/Image instead of next/image
+    "next/image.d.ts",
+    // give priority to custom cx from @/utils/cx instead of react-twc
+    "react-twc"
   ],
   "typescript.preferences.importModuleSpecifier": "shortest",
   "typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports

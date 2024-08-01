@@ -2,6 +2,7 @@ import "../styles/tailwind.css"
 
 import type { Metadata } from "next"
 
+import { Header } from "@/components/organisms"
 import { cx } from "@/utils/cx"
 
 import { raleway } from "./fonts"
@@ -19,7 +20,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           "max-w-screen-2xl mx-auto antialiased bg-background scroll-smooth font-sans text-base text-neutral-700",
           raleway.variable
         )}>
-        {children}
+        <Header />
+        <main className="flex-auto">
+          <div className="">{children}</div>
+        </main>
       </body>
     </html>
   )

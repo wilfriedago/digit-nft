@@ -44,7 +44,7 @@ export const Header = () => {
         <Button
           size="sm"
           variant="secondary"
-          className="lg:hidden"
+          className="h-7.5 w-7.5 lg:hidden"
           onClick={handleToggleMenu}
           title={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}>
           <Image src={isMenuOpen ? "/icons/menu-open.svg" : "/icons/menu-close.svg"} width={20} height={20} alt="" />

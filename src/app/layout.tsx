@@ -2,7 +2,7 @@ import "../styles/tailwind.css"
 
 import type { Metadata } from "next"
 
-import { Header } from "@/components/organisms"
+import { Footer, Header } from "@/components/organisms"
 import { cx } from "@/utils/cx"
 
 import { raleway } from "./fonts"
@@ -24,6 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main className="flex-auto">
           <div className="">{children}</div>
         </main>
+        <Footer />
       </body>
     </html>
   )

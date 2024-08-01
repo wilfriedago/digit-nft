@@ -1,9 +1,10 @@
 import type { Config } from "tailwindcss"
 import { fontFamily } from "tailwindcss/defaultTheme"
+import hocusPlugin from "tailwindcss-hocus"
 
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
-  plugins: [],
+  plugins: [hocusPlugin],
   theme: {
     fontFamily: {
       sans: ["var(--font-inter)", ...fontFamily.sans],
